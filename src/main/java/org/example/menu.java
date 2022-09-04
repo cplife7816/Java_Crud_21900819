@@ -1,11 +1,13 @@
 package org.example;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class menu {
 
     static int select;
 
-
+    ArrayList<words> list = new ArrayList<>();
     static void print_menu(){
         System.out.println("*** 영단어 마스터 ***");
         System.out.println("******************");
