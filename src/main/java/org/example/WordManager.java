@@ -1,14 +1,14 @@
 package org.example;
-import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.ArrayList;
 
-public class menu {
+public class WordManager {
+    Scanner scan = new Scanner(System.in);
 
-    static int select;
-
-    ArrayList<words> list = new ArrayList<>();
-    static void print_menu(){
+    WordCRUD wordCRUD;
+    WordManager(){
+        wordCRUD = new WordCRUD(scan);
+    }
+    public int selectMenu(){
         System.out.println("*** 영단어 마스터 ***");
         System.out.println("******************");
         System.out.println("1. 모든 단어 보기");
@@ -21,24 +21,26 @@ public class menu {
         System.out.println("0. 나가기");
         System.out.println("******************");
         System.out.println("=> 원하는 메뉴는?");
+
+        return scan.nextInt();
     }
 
-    static int selection(){
-        Scanner scan = new Scanner(System.in);
-        print_menu();
-        System.out.println("숫자를 입력하세요");
-        select = scan.nextInt();
-        switch (select){
-            case 1 :
-            case 2 :
-            case 3 :
-            case 5 :
-            case 6 :
-            case 7 :
-                break;
-            case 4 : words.word_add();
+    public void start(){
+        while(true) {
+            int menu = selectMenu();
+            if (menu == 0) break;
+            switch(menu){
+                case 1:
+                {
+                    wordCRUD.listAll();
+                    break;
+                }
+                case 4:
+                {
+                    wordCRUD.addWord();
+                    break;
+                }
+            }
         }
-        scan.close();
-        return select;
     }
 }
