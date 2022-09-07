@@ -28,7 +28,10 @@ public class WordManager {
     public void start(){
         while(true) {
             int menu = selectMenu();
-            if (menu == 0) break;
+            if (menu == 0) {
+                System.out.println("프로그램이 종료됩니다.");
+                break;
+            }
             switch(menu){
                 case 1:
                 {
