@@ -38,10 +38,34 @@ public class WordManager {
                     wordCRUD.listAll();
                     break;
                 }
+                case 2:
+                {
+                    wordCRUD.selectLevel();
+                    break;
+                }
+                case 3:
+                {
+                    wordCRUD.search();
+                    break;
+                }
                 case 4:
                 {
                     wordCRUD.addWord();
                     break;
+                }
+                case 5:
+                {
+                    wordCRUD.update();
+                    break;
+                }
+                case 6:
+                {
+                    wordCRUD.delete();
+                    break;
+                }
+                case 7:
+                {
+                    wordCRUD.save();
                 }
             }
         }

@@ -1,10 +1,16 @@
 package org.example;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public interface ICRUD {
 
     public Object add();
-    public int update(Object obj);
-    public int delete(Object obj);
-    public void selectOne(int id);
+    public void update();
+    public void delete();
+    public void selectLevel();
+    public void save();
+    public void load();
+    public void search();
 
 }
