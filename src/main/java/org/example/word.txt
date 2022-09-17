@@ -1,0 +1,7 @@
+1-bus-버스
+1-code-코드
+1-work-일
+1-school-학교
+2-structure-구조
+3-vaccine-백신
+3-programmer-프로그래머

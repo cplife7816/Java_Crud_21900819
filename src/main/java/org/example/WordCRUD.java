@@ -138,7 +138,7 @@ public class WordCRUD implements ICRUD {
     @Override
     public void save() {
         try {
-            FileOutputStream save = new FileOutputStream("word.txt");
+            FileOutputStream save = new FileOutputStream("src/main/java/org/example/word.txt");
             for (int i = 0; i < list.size(); i++) {
                 String text = list.get(i).getLevel() + "-" + list.get(i).getWord() + "-" + list.get(i).getMeaning() + "\n";
                 save.write(text.getBytes());
@@ -152,10 +152,10 @@ public class WordCRUD implements ICRUD {
 
     @Override
     public void load() {
-        File T = new File("word.txt");
+        File T = new File("src/main/java/org/example/word.txt");
         if (T.exists()) {
             try {
-                BufferedReader txt = new BufferedReader(new FileReader("word.txt"));
+                BufferedReader txt = new BufferedReader(new FileReader("src/main/java/org/example/word.txt"));
                 String stream;
                 while ((stream = txt.readLine()) != null) {
                     String text = stream;
