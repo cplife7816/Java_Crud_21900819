@@ -3,6 +3,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class WordCRUD implements ICRUD {
     ArrayList<Word> list;
     Scanner scan;
@@ -50,12 +51,14 @@ public class WordCRUD implements ICRUD {
         else {
             System.out.println("=>수정할 번호 선택:");
             int choose = scan.nextInt();
+            scan.nextLine();
             System.out.println("=>뜻 입력:");
             String meaning = scan.nextLine();
             list.get(checkList[choose]).setMeaning(meaning);
             System.out.println("단어 수정이 성공적으로 되었습니다.\n");
+
         }
-        scan.close();
+
 
     }
 
@@ -98,7 +101,7 @@ public class WordCRUD implements ICRUD {
         System.out.println("---------------------------------------");
         if (check == 0) System.out.println("검색 결과가 없습니다.\n");
         else{
-            System.out.println("=>수정할 번호 선택:");
+            System.out.println("=>삭제할 번호 선택:");
             int choose = scan.nextInt();
             System.out.println("정말로 삭제하실래요?(Y/n)");
             char sel = scan.next().charAt(0);
@@ -146,25 +149,36 @@ public class WordCRUD implements ICRUD {
         }
         System.out.println("저장완료!\n");
     }
-/*
+
     @Override
     public void load() {
-        try{
-            FileInputStream txt = new FileInputStream("word.txt");
-
-            int stream;
-            while((stream = txt.read()) != -1){
-                Word(0, level, word, meaning);
-
+        File T = new File("word.txt");
+        if (T.exists()) {
+            try {
+                BufferedReader txt = new BufferedReader(new FileReader("word.txt"));
+                String stream;
+                while ((stream = txt.readLine()) != null) {
+                    String text = stream;
+                    String[] cont = text.split("-");
+                    int level = Integer.parseInt(cont[0]);
+                    String word = cont[1];
+                    String meaning = cont[2];
+                    Word one = new Word(0, level, word, meaning);
+                    list.add(one);
+                }
+            } catch (IOException e) {
+                System.out.println("오류! 파일 손상되었습니다.");
             }
-        }
-    }
-*/
+            System.out.println("파일을 불러왔습니다.");
+        }else System.out.println("오류! 해당 파일을 찾을 수 없습니다.");
 
-    @Override
-    public void load() {
 
     }
+
+
+
+
+
 
     public void listAll(){
         System.out.println("---------------------------------------");

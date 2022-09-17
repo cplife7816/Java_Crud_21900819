@@ -26,6 +26,7 @@ public class WordManager {
     }
 
     public void start(){
+        wordCRUD.load();
         while(true) {
             int menu = selectMenu();
             if (menu == 0) {
