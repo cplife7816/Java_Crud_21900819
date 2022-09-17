@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class WordCRUD implements ICRUD {
     ArrayList<Word> list;
     Scanner scan;
+    int id = 0;
 
     WordCRUD(Scanner scan){
         list = new ArrayList<>();
@@ -21,12 +22,13 @@ public class WordCRUD implements ICRUD {
         word = word.substring(1);
         System.out.print("뜻 입력 : ");
         String meaning = scan.nextLine();
-        return new Word(0, level, word, meaning);
+        return new Word(id, level, word, meaning);
     }
 
     public void addWord() {
         Word one = (Word)add();
         list.add(one);
+        id++;
         System.out.println("새 단어가 단어장에 추가되었습니다.\n");
     }
     @Override
@@ -163,8 +165,9 @@ public class WordCRUD implements ICRUD {
                     int level = Integer.parseInt(cont[0]);
                     String word = cont[1];
                     String meaning = cont[2];
-                    Word one = new Word(0, level, word, meaning);
+                    Word one = new Word(id, level, word, meaning);
                     list.add(one);
+                    id++;
                 }
             } catch (IOException e) {
                 System.out.println("오류! 파일 손상되었습니다.");
