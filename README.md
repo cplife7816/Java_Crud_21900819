@@ -15,6 +15,7 @@
 ## 2번 실행화면
 # 난이도 1
 <img src='https://github.com/cplife7816/Java_Crud_21900819/blob/master/screenshots/2%EB%B2%88%20%EB%82%9C%EC%9D%B4%EB%8F%84%201.png' width = '500'>
+
 # 난이도 2,3
 <img src='https://github.com/cplife7816/Java_Crud_21900819/blob/master/screenshots/2%EB%B2%88%20%EB%82%9C%EC%9D%B4%EB%8F%84%202%2C3.png' width = '500'>
 
