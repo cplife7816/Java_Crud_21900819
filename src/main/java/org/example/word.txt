@@ -2,6 +2,5 @@
 1-code-코드
 1-work-일
 1-school-학교
-2-structure-구조
-3-vaccine-백신
+2-structure-구조체
 3-programmer-프로그래머
